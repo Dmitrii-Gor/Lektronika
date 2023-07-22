@@ -2,5 +2,9 @@
 *.cbp
 *.depend
 *.layout
+*.build
+*.exe
+
+/.objs
 /obj
 /bin
