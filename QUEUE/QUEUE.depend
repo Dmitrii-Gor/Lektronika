@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1681467910 source:d:\Новая папка\queue.c
+	"queue.h"
+	<stddef.h>
+
+1681404270 d:\Новая папка\queue.h
+
+1681467938 source:z:\personal\dmitrii-gor\queue\main.c
+	<stdio.h>
+	<stdlib.h>
+	"queue.h"
+
+1681404270 z:\personal\dmitrii-gor\queue\queue.h
+
