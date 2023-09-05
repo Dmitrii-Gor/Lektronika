@@ -2,36 +2,35 @@
 #include <stdlib.h>
 #include "queue.h"
 
-
-
 int main()
 {
-    /*init_stack();
-    push(12);
-    show_stack();
-    push(13);
-    push(140);
-    push(150);
-    show_stack();
-    printf("remove item - %d \n", pop());
-    show_stack();
-    printf("remove item - %d \n", pop());
-    printf("remove item - %d \n", pop());
-    show_stack();
-    printf("remove item - %d \n", pop());
-    printf("remove item - %d \n", pop());*/
+    push_queue(1);
+    push_queue(2);
+    push_queue(3);
 
-    init_queue();
-    show_queue();
-    push_queue(12);
-    show_queue();
-    push_queue(15);
-    push_queue(16);
-    show_queue();
-    /*
-    printf("remove item - %d\n", pop_queue());
-    push_queue(100);
+    pull_queue(); // 1
+    pull_queue();   // 2
+    pull_queue();   // 3
+    show_queue();   // empty
 
-*/
+    push_queue(4);
+    push_queue(5);
+    push_queue(6);
+    show_queue();   // 4, 5, 6
+
+    pull_queue();   // 4
+    show_queue();   // 5, 6
+
+    push_queue(7);
+    push_queue(8);
+    push_queue(9);
+    show_queue();   // 5, 6, 7, 8, 9
+
+    pull_queue();   // 5
+    pull_queue();   // 6
+    pull_queue();   // 7
+    pull_queue();   // 8
+    pull_queue();   // 9
+    pull_queue();   // error
     return 0;
 }

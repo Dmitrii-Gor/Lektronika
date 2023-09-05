@@ -1,63 +1,50 @@
-#include "queue.h"
 #include <stddef.h>
+#define BUFER_LEN 5
 
-struct stack_item
+int bufer[BUFER_LEN];
+int index = 0;
+int counter_of_push = 0;
+int counter_of_pull = -1;
+
+int push_queue(int value_of_x)
 {
-    int value;
-    struct stack_item *next;
-
-};
-
-struct stack_item *head;
-struct stack_item *bottom;
-
-void init_queue(void)
-{
-    head = NULL;
-    bottom = malloc(sizeof(struct stack_item));
+    if(index>=BUFER_LEN)
+    {
+        index = 0;
+    }
+    bufer[index] = value_of_x;
+    printf("push - %d  \n", value_of_x);
+    index++;
+    counter_of_push++;
+    if(counter_of_push > BUFER_LEN)
+    {
+        printf("queue is full\n");
+        return -1;
+    }
+    return 0;
 }
 
 void show_queue(void)
 {
-    if(head == NULL)
+    if(counter_of_push == 0)
     {
         printf("queue is empty\n");
     }
-
     else
     {
-        for(struct stack_item *p = head; p!= NULL; p = p->next)
+         printf("\n-================-\n");
+        for(int i = BUFER_LEN-1;  i>= 0; i--)
         {
-            printf("%d\t, %p\n", p->value, p->next);
+            printf("%d\t", bufer[i]);
         }
-        printf("\n=======end of stack=======\n\n");
+        printf("\n-================-\n");
     }
 }
 
-void push_queue(int value_of_x)
+int pull_queue(void)
 {
-    struct stack_item *ptr;
-    ptr = malloc(sizeof(struct stack_item));
-    ptr -> value = value_of_x;
-    ptr -> next = head;
-    head = ptr;
-}
-
-int pop_queue(void)
-{
-    if(head == NULL)
-    {
-        printf("stack is empty\n");
-        return -1;
-    }
-    else
-    {
-        int i = bottom -> value;
-        struct stack_item *ptr;
-        ptr = bottom;
-        bottom->next = head;
-        bottom = bottom->next;
-        free(ptr);
-        return i;
-    }
+    counter_of_pull++;
+    counter_of_push--;
+    printf("pull - %d \n", bufer[counter_of_pull]);
+    return bufer[counter_of_pull];
 }
