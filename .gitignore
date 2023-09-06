@@ -8,6 +8,9 @@
 /obj
 /bin
 
+# STM32IDE
+.settings/
+Debug/
 
 # Prerequisites
 *.d
