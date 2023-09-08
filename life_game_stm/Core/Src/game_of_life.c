@@ -60,7 +60,7 @@ void set_matrix_population(int counter_life)
 }
 
 
-void show_matrix(void)
+/*void show_matrix(void)
 {
     printf("====================\n");
     for(int i = 0; i < ROWS; i++)
@@ -79,7 +79,7 @@ void show_matrix(void)
         printf("\n");
     }
     printf("\n====================\n");
-}
+}*/
 
 
 int check_cell_neighbour(int cell_index_x, int cell_index_y)
