@@ -21,15 +21,15 @@ int is_move_valid(int matrix[][SIZE], int position_x, int position_y, int counte
 {
     if(counter_move > SIZE*SIZE)
     {
-        return 2; // наше поле пройдено программа может завершится
+        return 2;
     }
     if(position_x<0 || position_y<0 || position_x > SIZE-1 || position_y > SIZE-1 || matrix[position_x][position_y] != 0)
     {
-        return -1; // ход не подходит
+        return -1;
     }
     else
     {
-        return 1; // Ход подходит
+        return 1;
     }
 }
 
